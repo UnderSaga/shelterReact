@@ -16,7 +16,7 @@ function Layout() {
                     <nav> 
                         <ul className='navigation__list'>
                             <li className="link link_active"><Link to="/">About the shelter</Link></li>
-                            <li className="link"><a href="/pets">Our pets</a></li>
+                            <li className="link"><Link to="/pets">Our pets</Link></li>
                             <li className="link"><a href="#help">Help the shelter</a></li>
                             <li className="link"><a href="#footer">Contacts</a></li>
                         </ul>
