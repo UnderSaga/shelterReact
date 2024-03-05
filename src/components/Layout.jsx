@@ -1,22 +1,37 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Link, Outlet } from 'react-router-dom';
 import pin from '../assets/icons/pin.svg';
 import mail from '../assets/icons/icon-email.svg';
 import phone from '../assets/icons/icon-phone.svg';
-import puppy from '../assets/pets/footer-puppy.png'
+import puppy from '../assets/pets/footer-puppy.png';
+
+const mainHeader = 'main-header';
+const petsHeader = 'pets-header';
+const header = document.querySelector('header');
+const logo = document.querySelector('header-logo');
+
+function changeHeader(headerClass) {
+    if(headerClass === mainHeader) {
+        header.classList.remove(petsHeader);
+    } else {
+        header.classList.remove(mainHeader);
+    }
+    header.classList.add(headerClass);
+}
 
 function Layout() {
+
     return (
         <>
             <header>
                 <div className="container">
-                    <Link className="header-logo" to='#'>
+                    <Link className="header-logo" to='/' onClick={() => changeHeader(mainHeader) }>
                         <h2 className="logo__title">Cozy House</h2>
                         <p className="logo__subtitle">Shelter for pets in Boston</p>
                     </Link>
                     <nav> 
                         <ul className='navigation__list'>
-                            <li className="link link_active"><Link to="/">About the shelter</Link></li>
-                            <li className="link"><Link to="/pets">Our pets</Link></li>
+                            <li className="link"><NavLink className='main-link' to="/" onClick={() => changeHeader(mainHeader)} >About the shelter</NavLink></li>
+                            <li className="link"><NavLink className='pets-link' to="/pets" onClick={() => changeHeader(petsHeader)} >Our pets</NavLink></li>
                             <li className="link"><a href="#help">Help the shelter</a></li>
                             <li className="link"><a href="#footer">Contacts</a></li>
                         </ul>
