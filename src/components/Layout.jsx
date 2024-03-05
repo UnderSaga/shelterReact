@@ -7,7 +7,6 @@ import puppy from '../assets/pets/footer-puppy.png';
 const mainHeader = 'main-header';
 const petsHeader = 'pets-header';
 const header = document.querySelector('header');
-const logo = document.querySelector('header-logo');
 
 function changeHeader(headerClass) {
     if(headerClass === mainHeader) {
@@ -16,6 +15,24 @@ function changeHeader(headerClass) {
         header.classList.remove(mainHeader);
     }
     header.classList.add(headerClass);
+}
+
+function burgerMenu() {
+    const burgerMenu = document.querySelector('.hamburger');
+    const navigationContainer = document.querySelector('.navigation__container');
+    const navigation = document.querySelector('.navigation');
+
+    burgerMenu.classList.toggle('active');
+    navigation.classList.toggle('active');
+    navigationContainer.classList.toggle('active');
+    document.body.classList.toggle('lock');
+    
+    navigation.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        navigation.classList.remove('active');
+        navigationContainer.classList.remove('active');
+        document.body.classList.remove('lock');
+    });
 }
 
 function Layout() {
@@ -28,13 +45,18 @@ function Layout() {
                         <h2 className="logo__title">Cozy House</h2>
                         <p className="logo__subtitle">Shelter for pets in Boston</p>
                     </Link>
-                    <nav> 
-                        <ul className='navigation__list'>
-                            <li className="link"><NavLink className='main-link' to="/" onClick={() => changeHeader(mainHeader)} >About the shelter</NavLink></li>
-                            <li className="link"><NavLink className='pets-link' to="/pets" onClick={() => changeHeader(petsHeader)} >Our pets</NavLink></li>
-                            <li className="link"><a href="#help">Help the shelter</a></li>
-                            <li className="link"><a href="#footer">Contacts</a></li>
-                        </ul>
+                    <div className="hamburger" onClick={burgerMenu}>
+                        <span></span>
+                    </div>
+                    <nav className="navigation index__navigation"> 
+                        <div className="navigation__container">
+                            <ul className='navigation__list'>
+                                <li className="link"><NavLink className='main-link' to="/" onClick={() => changeHeader(mainHeader)} >About the shelter</NavLink></li>
+                                <li className="link"><NavLink className='pets-link' to="/pets" onClick={() => changeHeader(petsHeader)} >Our pets</NavLink></li>
+                                <li className="link"><a href="#help">Help the shelter</a></li>
+                                <li className="link"><a href="#footer">Contacts</a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </header>
