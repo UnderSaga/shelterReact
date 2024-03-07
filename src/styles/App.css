@@ -230,7 +230,12 @@ h5 {
 }
 
 .popup__header * {
+  font-size: 20px;
   color: #000;
+}
+
+.popup__header h3 {
+  font-size: 32px;
 }
 
 .popup__text{
@@ -790,6 +795,18 @@ footer .container {
   .hamburger.active {
       width: 22px;
       height: 30px;
+  }
+
+  .pets-header .hamburger span,
+  .pets-header .hamburger::after,
+  .pets-header .hamburger::before {
+    background: #000;
+  }
+
+  .pets-header .hamburger.active span,
+  .pets-header .hamburger.active::after,
+  .pets-header .hamburger.active::before {
+    background: #000;
   }
 
   .hamburger span,
