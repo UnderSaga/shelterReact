@@ -1,13 +1,15 @@
 import petsArray from '../assets/data/pets.js'
 
 function PetCard({id, className = 'slider__card', name, img}) {
+
 	return (
 		<div className={className} id={id} onClick={() => generatePopup(id)}>
 			<img src={img} alt={name} />
 			<h4 className="card__title">{name}</h4>
 			<button className="button button_secondary">Learn more</button>
 		</div>
-	)
+	);
+
 }
 
 function generatePopup(id) {

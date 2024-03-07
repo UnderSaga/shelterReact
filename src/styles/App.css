@@ -366,6 +366,7 @@ nav ul {
 }
 
 .about__content {
+  display: flex;
   flex-direction: column;
   row-gap: 30px;
   width: 390px;
@@ -898,11 +899,11 @@ footer .container {
       overflow: hidden;
   }
 
-  .pets__navigation {
+  .pets-navigation {
       background: rgba(16, 16, 16, 0.6);
   }
 
-  .pets__navigation .navigation__container {
+  .pets-navigation .navigation__container {
       background: #f6f6f6;
   }
   
@@ -938,6 +939,7 @@ footer .container {
   }
 
   .start-page__content {
+      padding: 40px 0 0;
       text-align: center;
       align-items: center;
   }
@@ -948,10 +950,6 @@ footer .container {
 
   .start-page__img img {
       width: auto;
-  }
-
-  .start-page__header {
-      font-size: 2rem;
   }
 
   .start-page__text {
@@ -966,18 +964,10 @@ footer .container {
       flex-direction: column-reverse;
   }
 
-  .about-content {
+  .about__content {
+      text-align: center;
       justify-items: center;
       padding: 0;
-  }
-
-  .about-content__header {
-      text-align: center;
-      padding: 0 0 25px;
-  }
-
-  .about-content__text {
-      width: 70%;
   }
 
   .about__img img {
@@ -1072,11 +1062,7 @@ footer .container {
   }
 
   .donation-content__header h3 {
-      font-size: 25px;
-  }
-
-  .donation-content__header h5 {
-      letter-spacing: normal;
+      font-size: 35px;
   }
 
   .donation-content__credit-card {
@@ -1087,9 +1073,10 @@ footer .container {
   }
 
   .donation-content__text {
-      margin: 0 auto;
-      text-align: justify;
-      width: 90%;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: justify;
+    width: 90%;
   }
 
   .credit-card {

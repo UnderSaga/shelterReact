@@ -5,42 +5,51 @@ import phone from '../assets/icons/icon-phone.svg';
 import puppy from '../assets/pets/footer-puppy.png';
 import close_button from '../assets/icons/close-button.svg';
 
-const mainHeader = 'main-header';
-const petsHeader = 'pets-header';
-const header = document.querySelector('header');
-
-function burgerMenu() {
-  const burgerMenu = document.querySelector('.hamburger');
-  const navigationContainer = document.querySelector('.navigation__container');
-  const navigation = document.querySelector('.navigation');
-
-  burgerMenu.classList.toggle('active');
-  navigation.classList.toggle('active');
-  navigationContainer.classList.toggle('active');
-  document.body.classList.toggle('lock');
-  
-  navigation.addEventListener('click', () => {
-    burgerMenu.classList.remove('active');
-    navigation.classList.remove('active');
-    navigationContainer.classList.remove('active');
-    document.body.classList.remove('lock');
-  });
-}
-
-function closePopup() {
-  const popup = document.querySelector('.popup');
-
-  popup.classList.remove('active');
-  document.body.classList.remove('popup-lock');
-}
-
 function Layout() {
+
+  const mainHeader = 'main-header';
+  const petsHeader = 'pets-header';
+
+  let navigation = document.querySelector('.navigation');
+
+  function burgerMenuOpen() {
+    
+    const burgerMenu = document.querySelector('.hamburger');
+    const navigationContainer = document.querySelector('.navigation__container');
+
+    navigation = document.querySelector('.navigation');
+
+    burgerMenu.classList.toggle('active');
+    navigation.classList.toggle('active');
+    navigationContainer.classList.toggle('active');
+    document.body.classList.toggle('lock');
+    
+    navigation.addEventListener('click', () => {
+      burgerMenu.classList.remove('active');
+      navigation.classList.remove('active');
+      navigationContainer.classList.remove('active');
+      document.body.classList.remove('lock');
+    });
+  }
+
+  function closePopup() {
+    const popup = document.querySelector('.popup');
+
+    popup.classList.remove('active');
+    document.body.classList.remove('popup-lock');
+  }
 
   function changeHeader(headerClass) {
 
-    if(headerClass === mainHeader) {
+  const header = document.querySelector('header'); 
+  navigation = document.querySelector('.navigation'); 
+
+    if(headerClass == mainHeader) {
+      navigation.classList.remove('pets-navigation');
       header.classList.remove(petsHeader);
-    } else {
+    } 
+    if(headerClass == petsHeader) {
+      navigation.classList.add('pets-navigation');
       header.classList.remove(mainHeader);
     }
 
@@ -50,13 +59,13 @@ function Layout() {
 
   return (
     <>
-      <header>
+      <header className={mainHeader}>
         <div className="container">
           <Link className="header-logo" to='/' onClick={() => changeHeader(mainHeader) }>
             <h2 className="logo__title">Cozy House</h2>
             <p className="logo__subtitle">Shelter for pets in Boston</p>
           </Link>
-          <div className="hamburger" onClick={burgerMenu}>
+          <div className="hamburger" onClick={burgerMenuOpen}>
             <span></span>
           </div>
           <nav className="navigation index__navigation"> 
