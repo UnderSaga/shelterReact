@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PetCard from '../components/PetCard';
+import Slider from '../components/Slider';
 
 import start_screen_puppy from '../assets/pets/start-screen-puppy.png';
 import about_puppy from '../assets/pets/about-pets.png'
@@ -7,6 +7,12 @@ import donation_dog from '../assets/pets/donation-dog.png'
 import katrine from '../assets/pets/pets-katrine.png'
 import jennifer from '../assets/pets/pets-jennifer.png'
 import woody from '../assets/pets/pets-woody.png'
+import scarlett from '../assets/pets/pets-scarlet.png'
+import sophia from '../assets/pets/pets-sophia.png'
+import timmy from '../assets/pets/pets-timmy.png'
+import charly from '../assets/pets/pets-charly.png'
+import freddie from '../assets/pets/pets-freddie.png'
+
 import food from '../assets/icons/icon-pet-food.svg';
 import transportation from '../assets/icons/icon-transportation.svg';
 import toys from '../assets/icons/icon-toys.svg';
@@ -17,12 +23,22 @@ import medicines from '../assets/icons/icon-medicines.svg';
 import collars from '../assets/icons/icon-collars-leashes.svg';
 import sleeping from '../assets/icons/icon-sleeping-area.svg';
 import card from '../assets/icons/credit-card.svg'
+import { useState } from 'react';
 
 function MovePage(path) {
 	window.location.href = path;
 }
 
 function MainPage() {
+
+	const count = 3;
+
+	const [cards, setCards] = useState([
+		{id: 'slider-katrine', name: 'Katrine', img: katrine},
+		{id: 'slider-jennifer', name: 'Jennifer', img: jennifer},
+		{id: 'slider-woody', name: 'Woody', img: woody},
+	])
+
 	return (
 		<>
 			<section className="start-page">
@@ -30,7 +46,7 @@ function MainPage() {
 					<div className="start-page__content">
 						<h2>Not only people need a house</h2>
 						<p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-						<button className="button button_primary">Make a friend</button>
+						<button className="button button_primary" onClick={() => MovePage('#pets')}>Make a friend</button>
 					</div>
 					<div className="start-page__img">
 						<img src={start_screen_puppy} alt="Puppy" />
@@ -49,18 +65,14 @@ function MainPage() {
 					</div>
 				</div>
 			</section>
-			<section className='our-pets'>
+			<section className='our-pets' id="pets">
 				<div className="container">
 					<h3 className="our-pets__header">Our friend who<br />are looking for a house</h3>
 					<div className="slider">
 						<div className="slider__arrow-button_back">
 							<button className="button button_round button_back"><strong>&larr;</strong></button>
 						</div>
-						<div className="slider__cards">
-							<PetCard id='slider-katrine' name='Katrine' img={katrine} />
-							<PetCard id='slider-jennifer' name='Jennifer' img={jennifer} />
-							<PetCard id='slider-woody' name='Woody' img={woody} />
-						</div>
+						<Slider cards={cards} count={count}/>
 						<div className="slider__arrow-button_forward">
 							<button className="button button_round button_forward"><strong>&rarr;</strong></button>
 						</div>
