@@ -13,7 +13,7 @@ function Layout() {
   let navigation = document.querySelector('.navigation');
 
   function burgerMenuOpen() {
-    
+
     const burgerMenu = document.querySelector('.hamburger');
     const navigationContainer = document.querySelector('.navigation__container');
 
@@ -23,13 +23,19 @@ function Layout() {
     navigation.classList.toggle('active');
     navigationContainer.classList.toggle('active');
     document.body.classList.toggle('lock');
-    
-    navigation.addEventListener('click', () => {
-      burgerMenu.classList.remove('active');
-      navigation.classList.remove('active');
-      navigationContainer.classList.remove('active');
-      document.body.classList.remove('lock');
-    });
+  }
+
+  function burgerMenuClose() {
+
+    const burgerMenu = document.querySelector('.hamburger');
+    const navigationContainer = document.querySelector('.navigation__container');
+
+    navigation = document.querySelector('.navigation');
+
+    burgerMenu.classList.remove('active');
+    navigation.classList.remove('active');
+    navigationContainer.classList.remove('active');
+    document.body.classList.remove('lock');
   }
 
   function closePopup() {
@@ -39,40 +45,39 @@ function Layout() {
     document.body.classList.remove('popup-lock');
   }
 
-  function changeHeader(headerClass) {
+  function changeHeader() {
 
-  const header = document.querySelector('header'); 
-  navigation = document.querySelector('.navigation'); 
+    const header = document.querySelector('header'); 
+    navigation = document.querySelector('.navigation'); 
 
-    if(headerClass == mainHeader) {
+    if(window.location.pathname == '/') {
       navigation.classList.remove('pets-navigation');
       header.classList.remove(petsHeader);
-    } 
-    if(headerClass == petsHeader) {
+      header.classList.add(mainHeader);
+    }
+    if(window.location.pathname == '/pets') {
       navigation.classList.add('pets-navigation');
       header.classList.remove(mainHeader);
+      header.classList.add(petsHeader);
     }
-
-    header.classList.add(headerClass);
-
   }
 
   return (
     <>
       <header className={mainHeader}>
         <div className="container">
-          <Link className="header-logo" to='/' onClick={() => changeHeader(mainHeader) }>
+          <Link className="header-logo" to='/'>
             <h2 className="logo__title">Cozy House</h2>
             <p className="logo__subtitle">Shelter for pets in Boston</p>
           </Link>
           <div className="hamburger" onClick={burgerMenuOpen}>
             <span></span>
           </div>
-          <nav className="navigation index__navigation"> 
+          <nav className="navigation index__navigation" onClick={burgerMenuClose}> 
             <div className="navigation__container">
               <ul className='navigation__list'>
-                <li className="link"><NavLink className='main-link' to="/" onClick={() => changeHeader(mainHeader)} >About the shelter</NavLink></li>
-                <li className="link"><NavLink className='pets-link' to="/pets" onClick={() => changeHeader(petsHeader)} >Our pets</NavLink></li>
+                <li className="link"><NavLink className='main-link' to="/" >About the shelter</NavLink></li>
+                <li className="link"><NavLink className='pets-link' to="/pets" >Our pets</NavLink></li>
                 <li className="link"><a href="#help">Help the shelter</a></li>
                 <li className="link"><a href="#footer">Contacts</a></li>
               </ul>
@@ -81,7 +86,7 @@ function Layout() {
         </div>
       </header>
 
-      <main>
+      <main onLoad={changeHeader}>
         <Outlet />
       </main>
 
