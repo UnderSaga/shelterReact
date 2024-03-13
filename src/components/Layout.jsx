@@ -4,7 +4,6 @@ import mail from "../assets/icons/icon-email.svg";
 import phone from "../assets/icons/icon-phone.svg";
 import puppy from "../assets/pets/footer-puppy.png";
 import { useState, useEffect } from "react";
-import Popup from "./Popup";
 
 function Layout() {
   const mainHeader = "main-header";
@@ -18,21 +17,6 @@ function Layout() {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   }, [isOpenMenu]);
-
-  useEffect(() => {
-    const header = document.querySelector("header");
-    const navigation = document.querySelector(".navigation");
-
-    if (isMainPage) {
-      navigation.classList.remove("pets-navigation");
-      header.classList.remove(petsHeader);
-      header.classList.add(mainHeader);
-    } else {
-      navigation.classList.add("pets-navigation");
-      header.classList.remove(mainHeader);
-      header.classList.add(petsHeader);
-    }
-  }, [isMainPage]);
 
   function burgerMenuOpen() {
     setOpenMenu(true);
@@ -53,7 +37,7 @@ function Layout() {
 
   return (
     <>
-      <header className={mainHeader}>
+      <header className={`${isMainPage ? mainHeader : petsHeader}`}>
         <div className="container">
           <Link className="header-logo" to="/">
             <h2 className="logo__title">Cozy House</h2>
@@ -66,8 +50,8 @@ function Layout() {
             <span></span>
           </div>
           <nav
-            className={`navigation pets-navigation ${
-              isOpenMenu ? "active" : ""
+            className={`navigation ${isOpenMenu ? "active" : ""} ${
+              isMainPage ? "" : "pets-navigation"
             }`}
             onClick={burgerMenuClose}
           >

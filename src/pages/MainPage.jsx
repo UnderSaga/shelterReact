@@ -30,23 +30,7 @@ function MainPage() {
   const [leftCards, setLeft] = useState(invisibleCards.slice(-count));
   const [rightCards, setRight] = useState(invisibleCards.slice(0, count));
 
-  const [cards, setCards] = useState([
-    {
-      id: visibleCards[0].id,
-      name: visibleCards[0].name,
-      img: visibleCards[0].img,
-    },
-    {
-      id: visibleCards[1].id,
-      name: visibleCards[1].name,
-      img: visibleCards[1].img,
-    },
-    {
-      id: visibleCards[2].id,
-      name: visibleCards[2].name,
-      img: visibleCards[2].img,
-    },
-  ]);
+  const [cards, setCards] = useState(visibleCards);
 
   const changeCards = (direction) => {
     if (direction === "right") {
@@ -63,23 +47,7 @@ function MainPage() {
       setLeft(shuffleArray(invisibleCards).slice(0, count));
     }
 
-    setCards([
-      {
-        id: visibleCards[0].id,
-        name: visibleCards[0].name,
-        img: visibleCards[0].img,
-      },
-      {
-        id: visibleCards[1].id,
-        name: visibleCards[1].name,
-        img: visibleCards[1].img,
-      },
-      {
-        id: visibleCards[2].id,
-        name: visibleCards[2].name,
-        img: visibleCards[2].img,
-      },
-    ]);
+    setCards(visibleCards);
   };
 
   function shuffleArray(array) {
