@@ -5,7 +5,8 @@ html {
 
 body {
   color: #fff;
-  background:  url("/img/background/noise_transparent.png"), linear-gradient(90deg, #513D2F 14%, #1A1A1C 94%);
+  background: url("/img/background/noise_transparent.png"),
+    linear-gradient(90deg, #513d2f 14%, #1a1a1c 94%);
 }
 
 body.popup-lock {
@@ -17,8 +18,8 @@ body.popup-lock {
 }
 
 .link .active {
-  color: #F6F6F6;
-  text-decoration: underline 2px #F1CDB3;
+  color: #f6f6f6;
+  text-decoration: underline 2px #f1cdb3;
 }
 
 p,
@@ -29,11 +30,11 @@ a {
 }
 
 p {
-  line-height: 160%
+  line-height: 160%;
 }
 
 a {
-  color: #CDCDCD;
+  color: #cdcdcd;
 }
 
 h1,
@@ -83,7 +84,7 @@ h5 {
 
 .button:disabled {
   cursor: default;
-  border: 2px solid #CDCDCD;
+  border: 2px solid #cdcdcd;
 }
 
 .button:active {
@@ -102,7 +103,7 @@ h5 {
 
 .button:disabled {
   cursor: default;
-  border: 2px solid #CDCDCD;
+  border: 2px solid #cdcdcd;
 }
 
 .button:active {
@@ -206,7 +207,7 @@ h5 {
   max-width: 952px;
   height: 500px;
   gap: 10px;
-  background-color: #fafafa; 
+  background-color: #fafafa;
   margin: 50px;
   padding: 0 15px;
 }
@@ -238,7 +239,7 @@ h5 {
   font-size: 32px;
 }
 
-.popup__text{
+.popup__text {
   font-family: Georgia;
   font-size: 0.87rem;
   color: #000;
@@ -272,13 +273,13 @@ header .container {
 }
 
 .logo__title {
-  color: #F1CDB3;
+  color: #f1cdb3;
   font-size: 2.13rem;
   letter-spacing: 1.92px;
 }
 
-.logo__subtitle{
-  color: #FFF;
+.logo__subtitle {
+  color: #fff;
   font-size: 0.87rem;
   letter-spacing: 1.3px;
 }
@@ -301,13 +302,13 @@ nav ul {
 }
 
 .link a:hover {
-  color: #FFF;
-  text-decoration: underline 2px #F1CDB3;
+  color: #fff;
+  text-decoration: underline 2px #f1cdb3;
 }
 
 .link_active a {
   color: #fafafa;
-  text-decoration: underline 2px #F1CDB3 !important;
+  text-decoration: underline 2px #f1cdb3 !important;
 }
 
 .pets-logo__title {
@@ -316,7 +317,7 @@ nav ul {
   letter-spacing: 1.92px;
 }
 
-.pets-logo__subtitle{
+.pets-logo__subtitle {
   color: #292929;
   font-size: 0.87rem;
   letter-spacing: 1.3px;
@@ -379,7 +380,7 @@ nav ul {
 }
 
 .our-pets {
-  background: #F6F6F6;
+  background: #f6f6f6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -442,7 +443,7 @@ nav ul {
 
 .pets-slider__card:hover {
   cursor: pointer;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .pets-slider__card:hover .button_secondary {
@@ -462,7 +463,7 @@ nav ul {
 
 .slider__card:hover {
   cursor: pointer;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .slider__card:hover .button_secondary {
@@ -470,7 +471,7 @@ nav ul {
 }
 
 .slider__arrow-button_back,
-.slider__arrow-button_forward{
+.slider__arrow-button_forward {
   display: flex;
   align-items: center;
 }
@@ -487,7 +488,7 @@ nav ul {
 .pagination-btn_inactive {
   width: 50px;
   height: 50px;
-  border: 2px solid #CDCDCD;
+  border: 2px solid #cdcdcd;
   border-radius: 100px;
   cursor: unset;
 }
@@ -516,7 +517,7 @@ nav ul {
 
 .help {
   display: flex;
-  background: #FFF;
+  background: #fff;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -545,7 +546,7 @@ nav ul {
 }
 
 .donation {
-  background: #F6F6F6;
+  background: #f6f6f6;
   padding: 10dvh 0 10dvh;
   width: 100%;
 }
@@ -568,7 +569,7 @@ nav ul {
   font-size: 35px;
 }
 
-.donation-content__credit-card { 
+.donation-content__credit-card {
   height: auto;
   margin: 20px 0;
 }
@@ -588,7 +589,7 @@ nav ul {
   background: transparent;
 }
 
-.card_img{
+.card_img {
   width: 30px;
   height: 23px;
   padding-right: 5px;
@@ -598,7 +599,7 @@ nav ul {
   font-size: 0.8rem;
   font-style: italic;
   line-height: 18px;
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .donation-content__img {
@@ -623,14 +624,14 @@ footer .container {
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 2.1px;
-  color: #FFF;
+  color: #fff;
   width: 290px;
 }
 
 .footer__link {
   font-family: Georgia, serif;
   font-size: 1.3rem;
-  color: #F1CDB3;
+  color: #f1cdb3;
   padding: 0 10px;
   line-height: 115%;
   letter-spacing: 1.2px;
@@ -642,7 +643,7 @@ footer .container {
 }
 
 .footer__link:hover {
-  text-decoration-color: #F1CDB3;
+  text-decoration-color: #f1cdb3;
 }
 
 .contacts,
@@ -655,7 +656,7 @@ footer .container {
 .contacts__email,
 .contacts__phone,
 .adress__boston,
-.adress__london  {
+.adress__london {
   display: inline-flex;
 }
 
@@ -670,7 +671,7 @@ footer .container {
 }
 
 .pets-header {
-  background-color: #FFF; 
+  background-color: #fff;
 }
 
 .pets-header a {
@@ -695,107 +696,104 @@ footer .container {
 
 @media (max-width: 1200px) {
   .container {
-      max-width: 970px;
+    max-width: 970px;
   }
 }
 
 @media (max-width: 992px) {
-
   .container {
-      max-width: 750px;
+    max-width: 750px;
   }
 
   .slider__card:nth-child(3) {
-      display: none;
+    display: none;
   }
 
   .pets-slider__card:nth-child(7) {
-      display: none;
+    display: none;
   }
-  
+
   .pets-slider__card:nth-child(8) {
-      display: none;
+    display: none;
   }
 
   .icon-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 
   footer .container {
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
-  
+
   .footer-content {
-      gap: 60px;
+    gap: 60px;
   }
 }
 
 @media (max-width: 768px) {
-
   .container {
-      max-width: none;
+    max-width: none;
   }
 
   .start-screen {
-      padding: 30px 0 0;
+    padding: 30px 0 0;
   }
 
   .start-page .container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .start-page__img {
-      padding: 10dvh 0 0;
+    padding: 10dvh 0 0;
   }
 
   .slider {
-      justify-content: space-around;
-      gap: 20px;
+    justify-content: space-around;
+    gap: 20px;
   }
 
   .icon-list {
-      width: auto;
-      display: grid;
-      grid-template-columns: 150px 150px 150px;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 60px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 60px;
   }
 
   .donation .container {
-      flex-direction: column-reverse;
-      gap: 60px;
+    flex-direction: column-reverse;
+    gap: 60px;
   }
 
   .donation-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
   }
 
   .donation-content__text {
-      width: auto;
+    width: auto;
   }
 }
 
 @media (max-width: 679px) {
-
   .hamburger {
-      z-index: 5;
-      display: block;
-      position: relative;
-      width: 30px;
-      height: 22px;
-      cursor: pointer;
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
   }
 
   .hamburger.active {
-      width: 22px;
-      height: 30px;
+    width: 22px;
+    height: 30px;
   }
 
   .pets-header .hamburger span,
@@ -813,263 +811,261 @@ footer .container {
   .hamburger span,
   .hamburger::after,
   .hamburger::before {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 7%;
-      border-radius: 3px;
-      background-color: #F1CDB3;
-      transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    border-radius: 3px;
+    background-color: #f1cdb3;
+    transition: all 0.3s ease-in-out;
   }
 
   .hamburger.active span,
   .hamburger.active::after,
   .hamburger.active::before {
-      position: absolute;
-      left: 0;
-      width: 7%;
-      height: 100%;
-      border-radius: 3px;
-      background: #F1CDB3;
-      transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    width: 7%;
+    height: 100%;
+    border-radius: 3px;
+    background: #f1cdb3;
+    transition: all 0.3s ease-in-out;
   }
 
   .pets__hamburger.active span,
   .pets__hamburger.active::after,
   .pets__hamburger.active::before {
-      background: #000;
+    background: #000;
   }
 
   .hamburger.active::after {
-      right: 0;
+    right: 0;
   }
 
-  .hamburger.active::before{
-      left: 100%;
+  .hamburger.active::before {
+    left: 100%;
   }
 
   .hamburger.active span {
-      left: 50%;
-      transform: scale(1) translate(0px, -50%);
+    left: 50%;
+    transform: scale(1) translate(0px, -50%);
   }
 
   .hamburger::after,
   .hamburger::before {
-      content: "";
-
+    content: "";
   }
 
   .hamburger::after {
-      bottom: 0;
+    bottom: 0;
   }
 
-  .hamburger::before{
-      top: 0;
+  .hamburger::before {
+    top: 0;
   }
 
   .hamburger span {
-      top: 50%;
-      transform: scale(1) translate(0px, -50%);
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
   }
 
   .pets__hamburger span,
   .pets__hamburger::after,
   .pets__hamburger::before {
-      background: #000;
+    background: #000;
   }
 
   .navigation {
-      z-index: -1;
-      display: flex;
-      position: fixed;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    z-index: -1;
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .navigation.active {
+    z-index: 2;
+    background: rgba(16, 16, 16, 0.6);
   }
 
-  .navigation.active {
-      z-index: 2;
-      background: rgba(16, 16, 16, 0.6);
+  .navigation__container {
+    overflow: auto;
+    z-index: 5;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    padding: 0;
+    background-color: #292929;
+    transition: right 0.5s ease 0s;
+    width: 320px;
+    height: 100%;
+    right: -100%;
   }
 
   body.lock {
-      overflow: hidden;
+    overflow: hidden;
   }
 
   .pets-navigation {
-      background: rgba(16, 16, 16, 0.6);
+    background: rgba(16, 16, 16, 0.6);
   }
 
   .pets-navigation .navigation__container {
-      background: #f6f6f6;
-  }
-  
-  .navigation__container {
-      overflow: auto;
-      z-index: 5;
-      display: flex;
-      position: fixed;
-      justify-content: center;
-      padding: 0;
-      background-color: #292929;
-      transition: right 0.5s ease 0s;
-      width: 320px;
-      height: 100%;
-      right: -100%;
+    background: #f6f6f6;
   }
 
   .navigation__container.active {
-      right: 0;
+    right: 0;
   }
 
   .navigation__list {
-      position: fixed;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      top: 250px;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    top: 250px;
   }
 
   .link a,
-  .link_active a{
-      font-size: 32px;
+  .link_active a {
+    font-size: 32px;
   }
 
   .start-page__content {
-      padding: 40px 0 0;
-      text-align: center;
-      align-items: center;
+    padding: 40px 0 0;
+    text-align: center;
+    align-items: center;
   }
 
   .start-page__img {
-      padding: 105px 0 0;
+    padding: 105px 0 0;
   }
 
   .start-page__img img {
-      width: auto;
+    width: auto;
   }
 
   .start-page__text {
-      width: auto;
+    width: auto;
   }
 
   .about {
-      padding: 42px 0;
+    padding: 42px 0;
   }
-  
+
   .about .container {
-      flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
 
   .about__content {
-      text-align: center;
-      justify-items: center;
-      padding: 0;
+    text-align: center;
+    justify-items: center;
+    padding: 0;
   }
 
   .about__img img {
-      padding: 42px 0 0;
-      width: 260px;
-      height: 354px;
+    padding: 42px 0 0;
+    width: 260px;
+    height: 354px;
   }
 
   .gallery {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
   }
 
   .slider {
-      display: grid;
-      grid-template-rows: 1fr 60px;
-      grid-template-columns: 1fr;
-      justify-items: center;
-      gap: 20px;
-      overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+    overflow: hidden;
   }
 
   .slider__arrow-button_back {
-      justify-self: left;
-      padding-left: 40px;
-      grid-area: 2 / 1;
+    justify-self: left;
+    padding-left: 40px;
+    grid-area: 2 / 1;
   }
 
   .slider__arrow-button_forward {
-      justify-self: right;
-      padding-right: 40px;
-      grid-area: 2 / 1;
+    justify-self: right;
+    padding-right: 40px;
+    grid-area: 2 / 1;
   }
 
   .popup .container {
-      align-items: flex-start;
+    align-items: flex-start;
   }
 
   .popup__body {
-      position: relative;
-      top: 50px;
-      margin: 0 20px 0 0;
-      justify-content: center;
-      height: auto;
+    position: relative;
+    top: 50px;
+    margin: 0 20px 0 0;
+    justify-content: center;
+    height: auto;
   }
 
   .popup__header {
-      text-align: center;
+    text-align: center;
   }
 
   .popup__content {
-      width: 100%;
+    width: 100%;
   }
 
   .popup__img {
-      display: none;
+    display: none;
   }
 
   .slider__card:nth-child(2) {
-      display: none;
+    display: none;
   }
 
   .pets-slider__card:nth-child(4) {
-      display: none;
+    display: none;
   }
-  
+
   .pets-slider__card:nth-child(5) {
-      display: none;
+    display: none;
   }
 
   .pets-slider__card:nth-child(6) {
-      display: none;
+    display: none;
   }
 
   .icon-list {
-      width: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      gap: 60px
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 60px;
   }
 
   .donation-content {
-      flex-direction: column;
-      width: 90%;
+    flex-direction: column;
+    width: 90%;
   }
 
   .donation-content__header {
-      text-align: center;
+    text-align: center;
   }
 
   .donation-content__header h3 {
-      font-size: 35px;
+    font-size: 35px;
   }
 
   .donation-content__credit-card {
-      margin: 20px auto;
-      width: 280px;
-      display: flex;
-      justify-content: center;
+    margin: 20px auto;
+    width: 280px;
+    display: flex;
+    justify-content: center;
   }
 
   .donation-content__text {
@@ -1080,66 +1076,66 @@ footer .container {
   }
 
   .credit-card {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   footer .container {
-      gap: 40px;
+    gap: 40px;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 40px
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
   }
 }
 
 @media (max-width: 479px) {
   .container {
-      max-width: 440px;
+    max-width: 440px;
   }
 
   .start-screen__content {
-      width: auto;
+    width: auto;
   }
 
   .donation-content {
-      width: auto;
+    width: auto;
   }
 }
 
 @media (max-width: 319px) {
   .container {
-      max-width: 250px;
-      padding: 0 0;
+    max-width: 250px;
+    padding: 0 0;
   }
 
   .our-pets .container {
-      max-width: none;
+    max-width: none;
   }
 
   .pagination {
-      gap: 5px;
+    gap: 5px;
   }
 
   .button_round {
-      width: 45px;
-      height: 45px;
+    width: 45px;
+    height: 45px;
   }
 
   .footer__header {
-      max-width: 250px;
+    max-width: 250px;
   }
 
   .contacts,
   .adress {
-      max-width: 250px;
+    max-width: 250px;
   }
 
   .contacts__email,
   .contacts__phone,
   .adress__boston,
   .adress__london {
-      max-width: 250px;
+    max-width: 250px;
   }
 }
