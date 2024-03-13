@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Slider from '../components/Slider';
+import petsArray from '../assets/data/pets';
 
 import start_screen_puppy from '../assets/pets/start-screen-puppy.png';
 import about_puppy from '../assets/pets/about-pets.png'
@@ -32,12 +33,55 @@ function MovePage(path) {
 function MainPage() {
 
 	const count = 3;
+	let visibleCards = petsArray.slice(0, count);
+	let invisibleCards = petsArray.slice(count);
+	let leftCards = invisibleCards.slice(-count);
+	let rightCards = invisibleCards.slice(0, count);
 
 	const [cards, setCards] = useState([
 		{id: 'slider-katrine', name: 'Katrine', img: katrine},
 		{id: 'slider-jennifer', name: 'Jennifer', img: jennifer},
 		{id: 'slider-woody', name: 'Woody', img: woody},
 	])
+
+	const changeCards = (direction) => {
+
+		if(direction === 'right') {
+			leftCards = visibleCards;
+			visibleCards = rightCards;
+			invisibleCards = petsArray.filter(item => !visibleCards.includes(item));
+			rightCards = shuffleArray(invisibleCards).slice(0, count);
+		} else {
+			rightCards = visibleCards;
+			visibleCards = leftCards;
+			invisibleCards = petsArray.filter(item => !visibleCards.includes(item));
+			leftCards = shuffleArray(invisibleCards).slice(0, count);
+		}
+
+		console.log(visibleCards)
+
+		setCards([{id: visibleCards[0].id, name: visibleCards[0].name, img: visibleCards[0].img},
+				{id: visibleCards[1].id, name: visibleCards[1].name, img: visibleCards[1].img}, 
+				{id: visibleCards[2].id, name: visibleCards[2].name, img: visibleCards[2].img}])
+
+	}
+
+	function shuffleArray(array) {
+
+		let currentIndex = array.length,  randomIndex;
+	
+		while (currentIndex > 0) {
+	
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+	
+			[array[currentIndex], array[randomIndex]] = [
+			array[randomIndex], array[currentIndex]];
+		}
+	
+		return array;
+	
+	}
 
 	return (
 		<>
@@ -70,14 +114,14 @@ function MainPage() {
 					<h3 className="our-pets__header">Our friend who<br />are looking for a house</h3>
 					<div className="slider">
 						<div className="slider__arrow-button_back">
-							<button className="button button_round button_back"><strong>&larr;</strong></button>
+							<button className="button button_round button_back" onClick={() => changeCards('left')}><strong>&larr;</strong></button>
 						</div>
 						<Slider cards={cards} count={count}/>
 						<div className="slider__arrow-button_forward">
-							<button className="button button_round button_forward"><strong>&rarr;</strong></button>
+							<button className="button button_round button_forward" onClick={() => changeCards('right')}><strong>&rarr;</strong></button>
 						</div>
 					</div>
-					<Link className="button button_primary" to='/pets' >Get to know the rest</Link>
+					<Link className="button button_primary" to='/pets' onClick={() => window.scroll(0, 0)}>Get to know the rest</Link>
 				</div>
 			</section>
 			<section className='help' id='help'>

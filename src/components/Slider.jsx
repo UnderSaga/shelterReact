@@ -3,9 +3,11 @@ import PetCard from "./PetCard";
 
 const Slider = ({cards, count}) => {
 
+    let data = Array.from(cards)
+
     return (
         <div className="slider__cards">
-            {cards.map(card => <PetCard card={card} key={card.id} />)}
+            {data.map(card => <PetCard card={card} key={card.id} />)}
         </div>
     )
 }
