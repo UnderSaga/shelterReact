@@ -1,51 +1,135 @@
-import katrine from "../assets/pets/pets-katrine.png";
-import jennifer from "../assets/pets/pets-jennifer.png";
-import woody from "../assets/pets/pets-woody.png";
-import scarlett from "../assets/pets/pets-scarlet.png";
-import sophia from "../assets/pets/pets-sophia.png";
-import timmy from "../assets/pets/pets-timmy.png";
-import charly from "../assets/pets/pets-charly.png";
-import freddie from "../assets/pets/pets-freddie.png";
-
+import petsArray from "../assets/data/pets";
 import Pagination from "../components/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const pagesArray = [];
+
+for (let i = 0; i < 17; i += 1) {
+  pagesArray[i] = [];
+  shuffleArray(pagesArray[i]);
+}
+
+function shuffleArray(array) {
+  while (array.length < 8) {
+    let randomNum = Math.floor(Math.random() * (9 - 1));
+
+    if (array.indexOf(petsArray[randomNum]) == -1) {
+      array.push(petsArray[randomNum]);
+    }
+  }
+  return array;
+}
 
 function Pets() {
-  const [cards, setCards] = useState([
-    { id: "slider-katrine", name: "Katrine", img: katrine },
-    { id: "slider-jennifer", name: "Jennifer", img: jennifer },
-    { id: "slider-woody", name: "Woody", img: woody },
-    { id: "slider-scarlett", name: "Scarlett", img: scarlett },
-    { id: "slider-sophia", name: "Sophia", img: sophia },
-    { id: "slider-timmy", name: "Timmy", img: timmy },
-    { id: "slider-charly", name: "Charly", img: charly },
-    { id: "slider-freddie", name: "Freddie", img: freddie },
-  ]);
+  const [pageNum, setPageNum] = useState(1);
+
+  const [maxPages, setMaxPages] = useState(6);
+
+  const [cards, setCards] = useState(pagesArray[0]);
+
+  useEffect(() => {
+    function generatePages() {}
+
+    window.addEventListener("load", generatePages);
+
+    return () => {
+      window.removeEventListener("load", generatePages);
+    };
+  }, []);
+
+  function changePage(direction) {
+    switch (direction) {
+      case "first":
+        setPageNum(1);
+        setCards(pagesArray[pageNum]);
+        break;
+      case "back":
+        setPageNum(pageNum - 1);
+        setCards(pagesArray[pageNum]);
+        break;
+      case "forward":
+        setPageNum(pageNum + 1);
+        setCards(pagesArray[pageNum]);
+        break;
+      case "last":
+        setPageNum(maxPages);
+        setCards(pagesArray[pageNum]);
+        break;
+    }
+  }
+
+  useEffect(() => {
+    function resize() {
+      switch (true) {
+        case window.innerWidth > 992:
+          setMaxPages(6);
+          break;
+        case window.innerWidth > 679:
+          setMaxPages(8);
+          break;
+        default:
+          setMaxPages(16);
+          break;
+      }
+
+      if (pageNum > maxPages) {
+        setPageNum(maxPages);
+      }
+    }
+
+    window.addEventListener("resize", resize);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
   return (
-    <>
-      <section className="our-pets" id="our-pets">
-        <div className="container">
-          <h3 className="our-pets__header">
-            Our friend who
-            <br />
-            are looking for a house
-          </h3>
-          <Pagination cards={cards} />
-          <div className="pagination">
-            <button className="button button_round" disabled>
-              &lt;&lt;
-            </button>
-            <button className="button button_round" disabled>
-              &lt;
-            </button>
-            <button className="button button_round button_selected">1</button>
-            <button className="button button_round">&gt;</button>
-            <button className="button button_round">&gt;&gt;</button>
-          </div>
+    <section className="our-pets" id="our-pets">
+      <div className="container">
+        <h3 className="our-pets__header">
+          Our friend who
+          <br />
+          are looking for a house
+        </h3>
+        <Pagination cards={cards} />
+        <div className="pagination">
+          <button
+            className={`button button_round ${pageNum > 1 ? "" : "disabled"}`}
+            onClick={() => changePage("first")}
+          >
+            &lt;&lt;
+          </button>
+          <button
+            className={`button button_round ${pageNum > 1 ? "" : "disabled"}`}
+            onClick={pageNum > 1 ? () => changePage("back") : () => {}}
+          >
+            &lt;
+          </button>
+          <button className="button button_round button_selected">
+            {pageNum}
+          </button>
+          <button
+            className={`button button_round ${
+              pageNum < maxPages ? "" : "disabled"
+            }`}
+            onClick={
+              pageNum < maxPages ? () => changePage("forward") : () => {}
+            }
+          >
+            &gt;
+          </button>
+          <button
+            className={`button button_round ${
+              pageNum < maxPages ? "" : "disabled"
+            }`}
+            onClick={() => changePage("last")}
+          >
+            &gt;&gt;
+          </button>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

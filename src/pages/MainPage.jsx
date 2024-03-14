@@ -1,28 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Slider from "../components/Slider";
 import petsArray from "../assets/data/pets";
-
-import start_screen_puppy from "../assets/pets/start-screen-puppy.png";
-import about_puppy from "../assets/pets/about-pets.png";
-import donation_dog from "../assets/pets/donation-dog.png";
-
-import food from "../assets/icons/icon-pet-food.svg";
-import transportation from "../assets/icons/icon-transportation.svg";
-import toys from "../assets/icons/icon-toys.svg";
-import cups from "../assets/icons/icon-bowls-and-cups.svg";
-import shampoos from "../assets/icons/icon-shampoos.svg";
-import vitamins from "../assets/icons/icon-vitamins.svg";
-import medicines from "../assets/icons/icon-medicines.svg";
-import collars from "../assets/icons/icon-collars-leashes.svg";
-import sleeping from "../assets/icons/icon-sleeping-area.svg";
-import card from "../assets/icons/credit-card.svg";
-import { useState } from "react";
-
-function MovePage(path) {
-  window.location.href = path;
-}
+import ICONS from "../constants/icons";
+import PETS_IMG from "../constants/petsImg";
 
 function MainPage() {
+  function MovePage(path) {
+    window.location.href = path;
+  }
+
   const count = 3;
 
   const [visibleCards, setVisible] = useState(petsArray.slice(0, count));
@@ -80,20 +67,22 @@ function MainPage() {
             </p>
             <button
               className="button button_primary"
-              onClick={() => MovePage("#pets")}
+              onClick={() => {
+                MovePage("#pets");
+              }}
             >
               Make a friend
             </button>
           </div>
           <div className="start-page__img">
-            <img src={start_screen_puppy} alt="Puppy" />
+            <img src={PETS_IMG.START_PUPPY} alt="Puppy" />
           </div>
         </div>
       </section>
       <section className="about" id="about">
         <div className="container">
           <div className="about__img">
-            <img src={about_puppy} alt="Puppy" />
+            <img src={PETS_IMG.ABOUT_PETS} alt="Puppy" />
           </div>
           <div className="about__content">
             <h2>About the shelter “Cozy House”</h2>
@@ -140,7 +129,11 @@ function MainPage() {
               </button>
             </div>
           </div>
-          <Link className="button button_primary" to="/pets">
+          <Link
+            className="button button_primary"
+            to="/pets"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Get to know the rest
           </Link>
         </div>
@@ -154,39 +147,39 @@ function MainPage() {
           </h3>
           <div className="icon-list">
             <div className="icon-list__item">
-              <img src={food} alt="Корм" />
+              <img src={ICONS.FOOD} alt="Корм" />
               <p>Pet food</p>
             </div>
             <div className="icon-list__item">
-              <img src={transportation} alt="Переноска" />
+              <img src={ICONS.TRANSPORTATION} alt="Переноска" />
               <p>Transportation</p>
             </div>
             <div className="icon-list__item">
-              <img src={toys} alt="Мячик" />
+              <img src={ICONS.TOYS} alt="Мячик" />
               <p>Toys</p>
             </div>
             <div className="icon-list__item">
-              <img src={cups} alt="Миска" />
+              <img src={ICONS.CUPS} alt="Миска" />
               <p>Bowls and cups</p>
             </div>
             <div className="icon-list__item">
-              <img src={shampoos} alt="Шампунь" />
+              <img src={ICONS.SHAMPOOS} alt="Шампунь" />
               <p>Shampoos</p>
             </div>
             <div className="icon-list__item">
-              <img src={vitamins} alt="Витамины" />
+              <img src={ICONS.VITAMINS} alt="Витамины" />
               <p>Vitamins</p>
             </div>
             <div className="icon-list__item">
-              <img src={medicines} alt="Таблетки" />
+              <img src={ICONS.MEDICINES} alt="Таблетки" />
               <p>Medicines</p>
             </div>
             <div className="icon-list__item">
-              <img src={collars} alt="Ошейник" />
+              <img src={ICONS.COLLARS} alt="Ошейник" />
               <p>Collars / leashes</p>
             </div>
             <div className="icon-list__item">
-              <img src={sleeping} alt="Лежанка" />
+              <img src={ICONS.SLEEPING} alt="Лежанка" />
               <p>Sleeping area</p>
             </div>
           </div>
@@ -195,7 +188,7 @@ function MainPage() {
       <section className="donation">
         <div className="container">
           <div className="donation__img">
-            <img src={donation_dog} alt="Щенок" />
+            <img src={PETS_IMG.DONATION_DOG} alt="Щенок" />
           </div>
           <div className="donation-content">
             <div className="donation-content__header">
@@ -211,7 +204,11 @@ function MainPage() {
                 className="button credit-card"
                 onClick={() => MovePage("#")}
               >
-                <img src={card} className="card_img" alt="Кредитная карта" />
+                <img
+                  src={ICONS.CARD}
+                  className="card_img"
+                  alt="Кредитная карта"
+                />
                 8380 2880 8028 8791 7435
               </button>
             </div>

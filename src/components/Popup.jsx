@@ -1,5 +1,5 @@
 import React from "react";
-import close_button from "../assets/icons/close-button.svg";
+import ICONS from "../constants/icons";
 
 function Popup({ className, closePopup, pet }) {
   return (
@@ -9,7 +9,7 @@ function Popup({ className, closePopup, pet }) {
           className="popup__close-button button button_round"
           onClick={closePopup}
         >
-          <img src={close_button} alt="X" />
+          <img src={ICONS.CLOSE_BUTTON} alt="X" />
         </button>
         <div className="popup__body">
           <div className="popup__img-container">

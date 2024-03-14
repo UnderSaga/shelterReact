@@ -14,7 +14,13 @@ const Slider = ({ cards, count }) => {
   };
 
   const generatePopup = (id) => {
-    setPet(petsArray.find((n) => n.id == id));
+    const pet = petsArray.find((n) => n.id == id);
+
+    if (!pet) {
+      setPet(petsArray[0]);
+    }
+
+    setPet(pet);
 
     setOpenPopup(true);
   };
@@ -22,7 +28,12 @@ const Slider = ({ cards, count }) => {
   return (
     <div className="slider__cards">
       {cards.map((card) => (
-        <PetCard card={card} key={card.id} generatePopup={generatePopup} />
+        <PetCard
+          card={card}
+          key={card.id}
+          generatePopup={generatePopup}
+          addButton={false}
+        />
       ))}
       <Popup
         className={`popup ${isOpenPopup ? "active" : ""}`}

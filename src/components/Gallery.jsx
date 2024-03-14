@@ -1,10 +1,10 @@
 import React from "react";
 import PetCard from "./PetCard";
+import Popup from "./Popup";
 import { useState } from "react";
-import Popup from "./Popup.jsx";
 import petsArray from "../assets/data/pets";
 
-const Pagination = ({ cards }) => {
+function Gallery({ cards }) {
   const [isOpenPopup, setOpenPopup] = useState(false);
 
   const [pet, setPet] = useState(petsArray[0]);
@@ -26,7 +26,7 @@ const Pagination = ({ cards }) => {
           card={card}
           key={card.id}
           generatePopup={generatePopup}
-          addButton={false}
+          addButton={true}
         />
       ))}
       <Popup
@@ -36,6 +36,6 @@ const Pagination = ({ cards }) => {
       />
     </div>
   );
-};
+}
 
-export default Pagination;
+export default Gallery;

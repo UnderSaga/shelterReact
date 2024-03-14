@@ -82,16 +82,24 @@ h5 {
   font-size: 1.13rem;
 }
 
-.button:disabled {
+.button.disabled {
   cursor: default;
   border: 2px solid #cdcdcd;
+}
+
+.button.none {
+  border: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  color: transparent;
 }
 
 .button:active {
   background: #fddcc4;
 }
 
-.button:disabled:hover {
+.button.disabled:hover {
   background: transparent;
 }
 
@@ -99,19 +107,6 @@ h5 {
   padding: 10px 40px;
   background: #fddcc4;
   font-size: 1.13rem;
-}
-
-.button:disabled {
-  cursor: default;
-  border: 2px solid #cdcdcd;
-}
-
-.button:active {
-  background: #fddcc4;
-}
-
-.button:disabled:hover {
-  background: transparent;
 }
 
 .button_primary {
@@ -151,6 +146,18 @@ h5 {
 .button_selected {
   background: #fddcc4;
   cursor: default;
+}
+
+.button_add:hover {
+  background: #fddcc4;
+}
+
+.button_delete {
+  border-color: palevioletred;
+}
+
+.button_delete:hover {
+  background: palevioletred;
 }
 
 .index-content {
@@ -422,32 +429,13 @@ nav ul {
 }
 
 .slider__card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
   align-items: center;
   height: 435px;
   background-color: #fafafa;
   border-radius: 9px;
-}
-
-.pets-slider__card {
-  align-items: center;
-  height: 435px;
-  background-color: #fafafa;
-  border-radius: 9px;
-}
-
-.pets-slider__card img {
-  width: 100%;
-  height: 270px;
-  padding: 0 0 30px;
-}
-
-.pets-slider__card:hover {
-  cursor: pointer;
-  background-color: #fff;
-}
-
-.pets-slider__card:hover .button_secondary {
-  background: #fddcc4;
 }
 
 .slider__card img {
@@ -464,10 +452,6 @@ nav ul {
 .slider__card:hover {
   cursor: pointer;
   background-color: #fff;
-}
-
-.slider__card:hover .button_secondary {
-  background: #fddcc4;
 }
 
 .slider__arrow-button_back,
