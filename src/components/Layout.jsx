@@ -64,6 +64,11 @@ function Layout() {
                   </NavLink>
                 </li>
                 <li className="link">
+                  <NavLink className="main-link" to="/addpets">
+                    Add new pets
+                  </NavLink>
+                </li>
+                <li className="link">
                   <a href="#help">Help the shelter</a>
                 </li>
                 <li className="link">

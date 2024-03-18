@@ -1,11 +1,8 @@
 import React from "react";
 import Gallery from "../components/Gallery";
 import { useState } from "react";
-import petsArray from "../assets/data/pets";
 
 function AddPets() {
-  const [cards, setCards] = useState(petsArray);
-
   return (
     <section className="our-pets" id="our-pets">
       <div className="container">
@@ -14,7 +11,7 @@ function AddPets() {
           <br />
           are looking for a house
         </h3>
-        <Gallery cards={cards} />
+        <Gallery />
       </div>
     </section>
   );
