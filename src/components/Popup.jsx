@@ -34,19 +34,19 @@ function Popup({ className, closePopup, pet }) {
               </li>
               <li>
                 <p>
-                  <b>Inoculations:</b>
+                  <b>Inoculations: </b>
                 </p>
                 <p className="popup__incolucations">{pet.inoculations}</p>
               </li>
               <li>
                 <p>
-                  <b>Diseases:</b>
+                  <b>Diseases: </b>
                 </p>
                 <p className="popup__diseases">{pet.diseases}</p>
               </li>
               <li>
                 <p>
-                  <b>Parasites:</b>
+                  <b>Parasites: </b>
                 </p>
                 <p className="popup__parasites">{pet.parasites}</p>
               </li>

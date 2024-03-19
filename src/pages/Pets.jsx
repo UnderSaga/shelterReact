@@ -21,26 +21,16 @@ function shuffleArray(array) {
 }
 
 function Pets() {
-  const [pageNum, setPageNum] = useState(1);
+  const [pageNum, setPageNum] = useState(0);
 
   const [maxPages, setMaxPages] = useState(6);
 
   const [cards, setCards] = useState(pagesArray[0]);
 
-  useEffect(() => {
-    function generatePages() {}
-
-    window.addEventListener("load", generatePages);
-
-    return () => {
-      window.removeEventListener("load", generatePages);
-    };
-  }, []);
-
   function changePage(direction) {
     switch (direction) {
       case "first":
-        setPageNum(1);
+        setPageNum(0);
         setCards(pagesArray[pageNum]);
         break;
       case "back":
@@ -52,7 +42,7 @@ function Pets() {
         setCards(pagesArray[pageNum]);
         break;
       case "last":
-        setPageNum(maxPages);
+        setPageNum(maxPages - 1);
         setCards(pagesArray[pageNum]);
         break;
     }
@@ -95,33 +85,33 @@ function Pets() {
         <Pagination cards={cards} />
         <div className="pagination">
           <button
-            className={`button button_round ${pageNum > 1 ? "" : "disabled"}`}
+            className={`button button_round ${pageNum > 0 ? "" : "disabled"}`}
             onClick={() => changePage("first")}
           >
             &lt;&lt;
           </button>
           <button
-            className={`button button_round ${pageNum > 1 ? "" : "disabled"}`}
-            onClick={pageNum > 1 ? () => changePage("back") : () => {}}
+            className={`button button_round ${pageNum > 0 ? "" : "disabled"}`}
+            onClick={pageNum > 0 ? () => changePage("back") : () => {}}
           >
             &lt;
           </button>
           <button className="button button_round button_selected">
-            {pageNum}
+            {pageNum + 1}
           </button>
           <button
             className={`button button_round ${
-              pageNum < maxPages ? "" : "disabled"
+              pageNum < maxPages - 1 ? "" : "disabled"
             }`}
             onClick={
-              pageNum < maxPages ? () => changePage("forward") : () => {}
+              pageNum < maxPages - 1 ? () => changePage("forward") : () => {}
             }
           >
             &gt;
           </button>
           <button
             className={`button button_round ${
-              pageNum < maxPages ? "" : "disabled"
+              pageNum < maxPages - 1 ? "" : "disabled"
             }`}
             onClick={() => changePage("last")}
           >

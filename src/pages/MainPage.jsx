@@ -17,8 +17,6 @@ function MainPage() {
   const [leftCards, setLeft] = useState(invisibleCards.slice(-count));
   const [rightCards, setRight] = useState(invisibleCards.slice(0, count));
 
-  const [cards, setCards] = useState(visibleCards);
-
   const changeCards = (direction) => {
     if (direction === "right") {
       setLeft(visibleCards);
@@ -33,8 +31,6 @@ function MainPage() {
       setInvisible(petsArray.filter((item) => !visibleCards.includes(item)));
       setLeft(shuffleArray(invisibleCards).slice(0, count));
     }
-
-    setCards(visibleCards);
   };
 
   function shuffleArray(array) {
@@ -119,7 +115,7 @@ function MainPage() {
                 <strong>&larr;</strong>
               </button>
             </div>
-            <Slider cards={cards} count={count} />
+            <Slider cards={visibleCards} count={count} />
             <div className="slider__arrow-button_forward">
               <button
                 className="button button_round button_forward"
