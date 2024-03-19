@@ -44,36 +44,42 @@ function Modal({ className, closeModal, addNewCard }) {
         <div>
           <form className="modal__body">
             <input
+              id="pet__name"
               value={newPet.name}
               onChange={(e) => setNewPet({ ...newPet, name: e.target.value })}
               type="text"
               placeholder="Pet name"
             />
             <input
+              id="pet__type"
               value={newPet.type}
               onChange={(e) => setNewPet({ ...newPet, type: e.target.value })}
               type="text"
               placeholder="Pet type"
             />
             <input
+              id="pet__breed"
               value={newPet.breed}
               onChange={(e) => setNewPet({ ...newPet, breed: e.target.value })}
               type="text"
               placeholder="Pet breed"
             />
             <input
+              id="pet__img"
               value={newPet.img}
               onChange={(e) => setNewPet({ ...newPet, img: e.target.value })}
               type="text"
               placeholder="Pet photo(link)"
             />
             <input
+              id="pet__age"
               value={newPet.age}
               onChange={(e) => setNewPet({ ...newPet, age: e.target.value })}
               type="text"
               placeholder="Pet age"
             />
             <input
+              id="pet__description"
               value={newPet.description}
               onChange={(e) =>
                 setNewPet({ ...newPet, description: e.target.value })
@@ -82,6 +88,7 @@ function Modal({ className, closeModal, addNewCard }) {
               placeholder="Pet description"
             />
             <input
+              id="pet__inoculations"
               value={newPet.inoculations}
               onChange={(e) =>
                 setNewPet({ ...newPet, inoculations: e.target.value })
@@ -90,6 +97,7 @@ function Modal({ className, closeModal, addNewCard }) {
               placeholder="Pet inoculations"
             />
             <input
+              id="pet__diseases"
               value={newPet.diseases}
               onChange={(e) =>
                 setNewPet({ ...newPet, diseases: e.target.value })
@@ -98,6 +106,7 @@ function Modal({ className, closeModal, addNewCard }) {
               placeholder="Pet diseases"
             />
             <input
+              id="pet__parasites"
               value={newPet.parasites}
               onChange={(e) =>
                 setNewPet({ ...newPet, parasites: e.target.value })

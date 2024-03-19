@@ -34,9 +34,9 @@ function Popup({ className, closePopup, pet }) {
               </li>
               <li>
                 <p>
-                  <b>Incolucations:</b>
+                  <b>Inoculations:</b>
                 </p>
-                <p className="popup__incolucations">{pet.incolucations}</p>
+                <p className="popup__incolucations">{pet.inoculations}</p>
               </li>
               <li>
                 <p>

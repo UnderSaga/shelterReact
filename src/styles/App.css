@@ -212,6 +212,7 @@ h5 {
   justify-content: space-around;
   border-radius: 9px;
   max-width: 952px;
+  min-width: 500px;
   gap: 10px;
   background-color: #fafafa;
   margin: 50px;
@@ -219,8 +220,8 @@ h5 {
 }
 
 .popup__img {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 270px;
+  max-height: 270px;
 }
 
 .popup__content {
@@ -472,6 +473,8 @@ nav ul {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+  min-width: 240px;
+  max-width: 240px;
   align-items: center;
   height: 435px;
   background-color: #fafafa;
