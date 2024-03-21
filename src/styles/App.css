@@ -462,16 +462,17 @@ nav ul {
 }
 
 .gallery {
+  position: relative;
   margin: 60px 0;
   width: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  row-gap: 20px;
   justify-content: space-around;
-  text-align: center;
 }
 
 .slider__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 5px;

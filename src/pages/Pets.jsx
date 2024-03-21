@@ -27,6 +27,12 @@ function Pets() {
 
   const [cards, setCards] = useState(pagesArray[0]);
 
+  const backButtonsDisableClass = pageNum > 0 ? "" : "disabled";
+  const forwardButtonsDisableClass = pageNum < maxPages - 1 ? "" : "disabled";
+
+  const backButtonsDisableAttribute = pageNum <= 0;
+  const forwardButtonsDisableAttribute = pageNum >= maxPages - 1;
+
   function changePage(direction) {
     switch (direction) {
       case "first":
@@ -85,14 +91,16 @@ function Pets() {
         <Pagination cards={cards} />
         <div className="pagination">
           <button
-            className={`button button_round ${pageNum > 0 ? "" : "disabled"}`}
+            disabled={backButtonsDisableAttribute}
+            className={`button button_round ${backButtonsDisableClass}`}
             onClick={() => changePage("first")}
           >
             &lt;&lt;
           </button>
           <button
-            className={`button button_round ${pageNum > 0 ? "" : "disabled"}`}
-            onClick={pageNum > 0 ? () => changePage("back") : () => {}}
+            disabled={backButtonsDisableAttribute}
+            className={`button button_round ${backButtonsDisableClass}`}
+            onClick={() => changePage("back")}
           >
             &lt;
           </button>
@@ -100,19 +108,15 @@ function Pets() {
             {pageNum + 1}
           </button>
           <button
-            className={`button button_round ${
-              pageNum < maxPages - 1 ? "" : "disabled"
-            }`}
-            onClick={
-              pageNum < maxPages - 1 ? () => changePage("forward") : () => {}
-            }
+            disabled={forwardButtonsDisableAttribute}
+            className={`button button_round ${forwardButtonsDisableClass}`}
+            onClick={() => changePage("forward")}
           >
             &gt;
           </button>
           <button
-            className={`button button_round ${
-              pageNum < maxPages - 1 ? "" : "disabled"
-            }`}
+            disabled={forwardButtonsDisableAttribute}
+            className={`button button_round ${forwardButtonsDisableClass}`}
             onClick={() => changePage("last")}
           >
             &gt;&gt;
